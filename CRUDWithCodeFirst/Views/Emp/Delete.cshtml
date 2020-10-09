@@ -1,0 +1,27 @@
+﻿@model CRUDWithCodeFirst.Models.Employee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+<h3>Are you sure you want to delete?</h3>
+<table>
+    <tr>
+        <td>@Html.DisplayNameFor(m=>m.Name)</td>
+        <td>@Html.DisplayFor(m=>m.Name)</td>
+    </tr>
+     <tr>
+        <td>@Html.DisplayNameFor(m=>m.Gender)</td>
+        <td>@Html.DisplayFor(m=>m.Gender)</td>
+    </tr>
+     <tr>
+        <td>@Html.DisplayNameFor(m=>m.Email)</td>
+        <td>@Html.DisplayFor(m=>m.Email)</td>
+    </tr>
+</table>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" />
+    @Html.HiddenFor(m=>m.EmployeeID)
+}

@@ -1,0 +1,63 @@
+﻿@model CRUDWithCodeFirst.Models.Employee
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Emp", FormMethod.Post))
+{
+<table>
+    <tr>
+        <td>@Html.LabelFor(m => m.Name)</td>
+        <td>@Html.TextBoxFor(m => m.Name)</td>
+        <td>@Html.ValidationMessageFor(m => m.Name)</td>
+    </tr>
+    <tr>
+        <td>Gender:</td>
+        <td>
+            @Html.RadioButtonFor(m => m.Gender, "Male", new {style="width:30px !important" })Male
+             @Html.RadioButtonFor(m => m.Gender, "Female", new {style="width:30px !important" })Female
+        </td>
+        <td>
+            @Html.ValidationMessageFor(m=>m.Gender)
+        </td>
+    </tr>
+     <tr>
+        <td>@Html.LabelFor(m => m.Email)</td>
+        <td>@Html.TextBoxFor(m => m.Email)</td>
+        <td>@Html.ValidationMessageFor(m => m.Email)</td>
+    </tr>
+     <tr>
+        <td>@Html.LabelFor(m => m.Salary)</td>
+        <td>@Html.TextBoxFor(m => m.Salary)</td>
+        <td>@Html.ValidationMessageFor(m => m.Salary)</td>
+    </tr>
+     <tr>
+        <td>@Html.LabelFor(m => m.Age)</td>
+        <td>@Html.TextBoxFor(m => m.Age)</td>
+        <td>@Html.ValidationMessageFor(m => m.Age)</td>
+    </tr>
+     <tr>
+        <td>@Html.LabelFor(m => m.Password)</td>
+        <td>@Html.PasswordFor(m => m.Password)</td>
+        <td>@Html.ValidationMessageFor(m => m.Password)</td>
+    </tr>
+     <tr>
+        <td>@Html.LabelFor(m => m.PersonalWebsite)</td>
+        <td>@Html.TextBoxFor(m => m.PersonalWebsite)</td>
+        <td>@Html.ValidationMessageFor(m => m.PersonalWebsite)</td>
+    </tr>
+     <tr>
+        <td>@Html.LabelFor(m => m.HireDate)</td>
+        <td>@Html.TextBoxFor(m => m.HireDate)</td>
+        <td>@Html.ValidationMessageFor(m => m.HireDate)</td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <input type="submit" value="Create" />
+        </td>
+    </tr>
+</table>
+}

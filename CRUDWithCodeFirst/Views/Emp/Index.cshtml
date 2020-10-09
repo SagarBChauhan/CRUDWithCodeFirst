@@ -1,0 +1,35 @@
+﻿@model IEnumerable<CRUDWithCodeFirst.Models.Employee>
+
+@{
+    ViewBag.Title = "Employee List";
+}
+
+<h2>Employee List</h2>
+<br />
+@Html.ActionLink("Create New","Create")
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(m=>m.Name)</th>
+        <th>@Html.DisplayNameFor(m=>m.Gender)</th>
+        <th>@Html.DisplayNameFor(m=>m.Email)</th>
+        <th>@Html.DisplayNameFor(m=>m.Salary)</th>
+        <th>@Html.DisplayNameFor(m=>m.Age)</th>
+        <th>@Html.DisplayNameFor(m=>m.PersonalWebsite)</th>
+        <th>@Html.DisplayNameFor(m=>m.HireDate)</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(m=>item.Name)</td>
+            <td>@Html.DisplayFor(m=>item.Gender)</td>
+            <td>@Html.DisplayFor(m=>item.Email)</td>
+            <td>@Html.DisplayFor(m=>item.Salary)</td>
+            <td>@Html.DisplayFor(m=>item.Age)</td>
+            <td>@Html.DisplayFor(m=>item.PersonalWebsite)</td>
+            <td>@Html.DisplayFor(m=>item.HireDate)</td>
+            <td>@Html.ActionLink("Edit","Edit",new {EmployeeID = item.EmployeeID})</td>
+            <td>@Html.ActionLink("Delete","Delete",new {EmployeeID = item.EmployeeID})</td>
+            <td>@Html.ActionLink("Details","Details",new {EmployeeID = item.EmployeeID})</td>
+        </tr>
+    }
+</table>
